@@ -1,15 +1,19 @@
 <!doctype html>
+<?php session_start(); ?>
 <html class="no-js" lang="en">
 
 <head>
     <meta charset="utf-8">
     
     <!--====== Title ======-->
-    <title>JobLister - Get a fresh start now! </title>
+    <title>BasicJobs - Encontre o seu futuro! </title>
     
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    
     <!--====== Favicon Icon ======-->
     <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png">
         
@@ -27,7 +31,10 @@
     
     <!--====== Style CSS ======-->
     <link rel="stylesheet" href="assets/css/style.css">
-    
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
 </head>
 
 <body>
@@ -93,13 +100,29 @@
                                     </li>
                                 </ul>
                             </div> <!-- navbar collapse -->
-                            
-                            <div class="navbar-btn d-none d-sm-inline-block btn-login">
-                                <a class="btn-left main-btn" data-scroll-nav="0" href="#" rel="nofollow">Login</a>
-                            </div>
-                            <div class="navbar-btn d-none d-sm-inline-block">
-                                <a class="main-btn" data-scroll-nav="0" href="#" rel="nofollow">Sign Up</a>
-                            </div>
+
+
+                            <!-- Buttons on the navbar -->
+                            <!-- Check if the user is logged in, if not then redirect to login page -->
+                            <?php if( isset($_SESSION['loggedin']) && !empty($_SESSION['loggedin']) )
+                            {
+                                ?>
+                                <div class="dropdown show text-center navbar-btn d-none d-sm-inline-block btn-login">
+                                    <a class="dropdown-toggle btn-left main-btn" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Minha Conta</a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                        <a class="dropdown-item" href="public/logout.php">Logout</a>
+                                        <a class="dropdown-item" href="public/reset-password.php">Change Password</a>
+                                    </div>
+                                </div>
+                            <?php }else{ ?>
+                                <div class="text-center navbar-btn d-none d-sm-inline-block btn-login">
+                                    <a class="btn-left main-btn" href="public/login.php">Login</a>
+                                </div>
+                                <div class="navbar-btn d-none d-sm-inline-block">
+                                    <a class="main-btn" data-scroll-nav="0" href="public/register.php" rel="nofollow">Registar</a>
+                                </div>
+                            <?php } ?>
+
                         </nav> <!-- navbar -->
                     </div>
                 </div> <!-- row -->
@@ -132,7 +155,8 @@
     </header>
     
     <!--====== HEADER PART ENDS ======-->
-    
+
+
     <!--====== BRAMD PART START ======-->
     
     <div class="brand-area pt-90">
