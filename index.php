@@ -90,13 +90,10 @@
                                         <a class="page-scroll" href="#features">Sobre</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="page-scroll" href="#facts">Factos</a>
+                                        <a class="page-scroll" href="public/pages/list-jobs.php">Empregos</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="page-scroll" href="#team">Jobs</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="page-scroll" href="#blog">For Employers</a>
+                                        <a class="page-scroll" href="#blog">Empregadores</a>
                                     </li>
                                 </ul>
                             </div> <!-- navbar collapse -->
@@ -408,7 +405,7 @@
                     <div class="col-lg-12">
                         <div class="copyright d-sm-flex justify-content-between">
                             <div class="copyright-content">
-                                <p class="text">Designed and Developed by <a href="https://www.linkedin.com/in/daniel-carvalho-wd/" rel="nofollow">Daniel Carvalho</a></p>
+                                <p class="text">Developed by <a href="https://www.linkedin.com/in/daniel-carvalho-wd/" rel="nofollow">Daniel Carvalho</a></p>
                             </div> <!-- copyright content -->
                         </div> <!-- copyright -->
                     </div>

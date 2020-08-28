@@ -1,6 +1,7 @@
 <?php
 // Include config file
 require_once "../config/config.php";
+include 'templates/header.php';
 
 // Define variables and initialize with empty values
 $email = $password = $confirm_password = "";
@@ -133,3 +134,5 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 </div>
 </body>
 </html>
+
+<?php include 'templates/footer.php'; ?>

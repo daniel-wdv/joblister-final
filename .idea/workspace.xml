@@ -1,7 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="b701db64-abe9-4ebe-924a-206932bdd842" name="Default Changelist" comment="" />
+    <list default="true" id="b701db64-abe9-4ebe-924a-206932bdd842" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/pages/create.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/pages/delete.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/pages/error.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/pages/list-jobs.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/pages/read.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/pages/update.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/templates/footer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/templates/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/register.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -9,6 +39,9 @@
   </component>
   <component name="ComposerSettings">
     <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1gMEFXzNrmh9Awyl5eOgUtoeZKD" />
   <component name="ProjectViewState">
@@ -18,7 +51,15 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../joblister" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\joblister-final\public\pages" />
+      <recent name="C:\wamp64\www\joblister-final\config" />
+      <recent name="C:\wamp64\www\joblister-final\public" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -28,17 +69,42 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1597915957873</updated>
-      <workItem from="1597915959024" duration="37068000" />
+      <workItem from="1597915959024" duration="37739000" />
+      <workItem from="1598047918608" duration="985000" />
+      <workItem from="1598254697750" duration="17435000" />
+      <workItem from="1598601096994" duration="10943000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="392" y="131" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1597919359327">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state x="-1332" y="200" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1598620288756">
+      <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
+    <state x="-1332" y="200" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1598620288756" />
     <state x="392" y="131" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1597919359327" />
+    <state x="-1288" y="147" key="FileChooserDialogImpl" timestamp="1598620907206">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1288" y="147" key="FileChooserDialogImpl/0.0.1280.680/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1598620907206" />
+    <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1598441220582" />
+    <state x="-1252" y="237" width="583" height="566" key="find.popup" timestamp="1598621870041">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1252" y="237" width="583" height="566" key="find.popup/0.0.1280.680/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1598621870041" />
   </component>
 </project>
