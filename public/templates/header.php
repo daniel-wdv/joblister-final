@@ -1,5 +1,6 @@
-<!doctype html>
 <?php session_start(); ?>
+<!doctype html>
+
 <html class="no-js" lang="en">
 
 <head>
@@ -26,11 +27,15 @@
     <!--====== Bootstrap CSS ======-->
     <link rel="stylesheet" href="../assets/css/bootstrap-4.5.0.min.css">
 
+
     <!--====== Default CSS ======-->
     <link rel="stylesheet" href="../assets/css/default.css">
 
     <!--====== Style CSS ======-->
     <link rel="stylesheet" href="../assets/css/style.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
+
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -50,7 +55,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <nav class="navbar navbar-expand-lg">
-                        <a class="navbar-brand" href="index.html">
+                        <a class="navbar-brand" href="../index.php">
                             <img src="../assets/images/logo-2.svg" alt="Logo">
                         </a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -65,13 +70,13 @@
                                     <a class="page-scroll" href="#home">Início</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="page-scroll" href="#features">Sobre</a>
+                                    <a class="page-scroll" href="../#features">Sobre</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="page-scroll" href="public/pages/list-jobs.php">Empregos</a>
+                                    <a class="page-scroll" href="../public/list-jobs.php">Empregos</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="page-scroll" href="#blog">Empregadores</a>
+                                    <a class="page-scroll" href="../#blog">Empregadores</a>
                                 </li>
                             </ul>
                         </div> <!-- navbar collapse -->
@@ -85,16 +90,17 @@
                             <div class="dropdown show text-center navbar-btn d-none d-sm-inline-block btn-login">
                                 <a class="dropdown-toggle btn-left main-btn" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Minha Conta</a>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                    <a class="dropdown-item" href="public/logout.php">Logout</a>
-                                    <a class="dropdown-item" href="public/reset-password.php">Change Password</a>
+                                    <a class="dropdown-item" href="../public/pages/create.php">Create Job</a>
+                                    <a class="dropdown-item" href="../public/reset-password.php">Change Password</a>
+                                    <a class="dropdown-item" href="../public/logout.php">Logout</a>
                                 </div>
                             </div>
                         <?php }else{ ?>
                             <div class="text-center navbar-btn d-none d-sm-inline-block btn-login">
-                                <a class="btn-left main-btn" href="public/login.php">Login</a>
+                                <a class="btn-left main-btn" href="login.php">Login</a>
                             </div>
                             <div class="navbar-btn d-none d-sm-inline-block">
-                                <a class="main-btn" data-scroll-nav="0" href="public/register.php" rel="nofollow">Registar</a>
+                                <a class="main-btn" data-scroll-nav="0" href="register.php" rel="nofollow">Registar</a>
                             </div>
                         <?php } ?>
 

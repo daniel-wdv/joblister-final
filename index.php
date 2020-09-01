@@ -90,7 +90,7 @@
                                         <a class="page-scroll" href="#features">Sobre</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="page-scroll" href="public/pages/list-jobs.php">Empregos</a>
+                                        <a class="page-scroll" href="public/list-jobs.php">Empregos</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="page-scroll" href="#blog">Empregadores</a>

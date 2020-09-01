@@ -1,7 +1,4 @@
 <?php
-// Initialize the session
-session_start();
-
 // Check if the user is already logged in, if yes then redirect him to welcome page
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     header("location: ../index.php");
@@ -88,6 +85,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 }
 ?>
 
+<?php include 'templates/header.php'; ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -100,18 +100,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     </style>
 </head>
 <body>
-<div class="wrapper">
-    <h2>Login</h2>
+<div class="wrapper container-fluid">
+    <h2 style="text-align: center;">Login</h2>
     <p>Por favor preencha os campos para efetuar o login.</p>
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
         <div class="form-group <?php echo (!empty($email_err)) ? 'has-error' : ''; ?>">
             <label>Email</label>
-            <input type="text" name="email" class="form-control" value="<?php echo $email; ?>">
+            <input placeholder="Introduza o seu email" type="text" name="email" class="form-control" value="<?php echo $email; ?>">
             <span class="help-block"><?php echo $email_err; ?></span>
         </div>
         <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
             <label>Password</label>
-            <input type="password" name="password" class="form-control">
+            <input placeholder="Introduza a sua password" type="password" name="password" class="form-control">
             <span class="help-block"><?php echo $password_err; ?></span>
         </div>
         <div class="form-group">
@@ -122,3 +122,5 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 </div>
 </body>
 </html>
+
+<?php include 'templates/footer.php'; ?>

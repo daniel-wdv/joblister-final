@@ -2,6 +2,11 @@
 // Include config file
 require_once "../../config/config.php";
 
+session_start();
+if(!isset($_SESSION['loggedin'])){
+    header("Location:../Login.php");
+}
+
 // Define variables and initialize with empty values
 $job_title = $company = $description = $salary = $location = $contact_user = $contact_email =  "";
 $job_title_err = $company_err = $description_err = $salary_err = $location_err = $contact_user_err = $contact_email_err = "";
@@ -89,7 +94,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
                 // Records created successfully. Redirect to landing page
-                header("location: list-jobs.php");
+                header("location: ../list-jobs.php");
                 exit();
             } else{
                 echo "Something went wrong. Please try again later.";
