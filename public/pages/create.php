@@ -8,7 +8,7 @@ if(!isset($_SESSION['loggedin'])){
 }
 
 // Define variables and initialize with empty values
-$job_title = $company = $description = $salary = $location = $contact_user = $contact_email =  "";
+$job_title = $company = $description = $salary = $location = $contact_user = $contact_email = "";
 $job_title_err = $company_err = $description_err = $salary_err = $location_err = $contact_user_err = $contact_email_err = "";
 
 // Processing form data when form is submitted
@@ -73,6 +73,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $contact_email = $input_contact_email;
     }
 
+
     // Check input errors before inserting in database
     if(empty($job_title_err) && empty($company_err) && empty($description_err) && empty($salary_err) && empty($location_err) && empty($contact_user_err) && empty($contact_email_err)) {
         // Prepare an insert statement
@@ -105,6 +106,33 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         mysqli_stmt_close($stmt);
     }
 
+    // VALIDATE Image name and image
+    if(isset($_POST['but_upload'])) {
+        $img_name = $_FILES['file']['name'];
+        $target_dir = "upload/";
+        $target_file = $target_dir . basename($_FILES["file"]["name"]);
+
+        // Select file type
+        $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+
+        // Valid file extensions
+        $extensions_arr = array("jpg", "jpeg", "png", "gif");
+
+        // Check extension
+        if (in_array($imageFileType, $extensions_arr)) {
+
+            // Convert to base64
+            $image_base64 = base64_encode(file_get_contents($_FILES['file']['tmp_name']));
+            $image = 'data:image/' . $imageFileType . ';base64,' . $image_base64;
+            // Insert record
+            $sql= "insert into jobs(image) values('" . $image . "')";
+            mysqli_query($link, $sql);
+
+            // Upload file
+            move_uploaded_file($_FILES['file']['tmp_name'], $target_dir . $img_name);
+        }
+    }
+
     // Close connection
     mysqli_close($link);
 }
@@ -132,7 +160,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     <h2>Create Record</h2>
                 </div>
                 <p>Please fill this form and submit to add job record to the database.</p>
-                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype='multipart/form-data'>
                     <div class="form-group <?php echo (!empty($job_title_err)) ? 'has-error' : ''; ?>">
                         <label>Job Title</label>
                         <input type="text" name="job_title" class="form-control" value="<?php echo $job_title; ?>">
@@ -168,7 +196,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                         <input type="text" name="contact_email" class="form-control" value="<?php echo $contact_email; ?>">
                         <span class="help-block"><?php echo $contact_email_err;?></span>
                     </div>
-                    <input type="submit" class="btn btn-primary" value="Submit">
+                    <div class="form-group">
+                        <label>Upload Image:</label>
+                        <input type='file' name='file' />
+                    </div>
+                    <input type="submit" class="btn btn-primary" value="Submit" name="but_upload">
                     <a href="../pages/list-jobs.php" class="btn btn-default">Cancel</a>
                 </form>
             </div>

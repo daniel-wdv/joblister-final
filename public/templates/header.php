@@ -91,6 +91,7 @@
                                 <a class="dropdown-toggle btn-left main-btn" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Minha Conta</a>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                     <a class="dropdown-item" href="../public/pages/create.php">Create Job</a>
+                                    <a class="dropdown-item" href="../public/upload-images.php">Upload Image</a>
                                     <a class="dropdown-item" href="../public/reset-password.php">Change Password</a>
                                     <a class="dropdown-item" href="../public/logout.php">Logout</a>
                                 </div>

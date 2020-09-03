@@ -1,59 +1,36 @@
 <?php include 'templates/header.php'; ?>
-<div class="wrapper container">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="clearfix">
-                    <h2 class="pull-left">Choose Job Category</h2>
+    <main role="main" class="container">
 
-                </div>
-                <?php
-                // Include config file
-                require_once "../config/config.php";
+<?php
+                                // Include config file
+                                require_once "../config/config.php";
 
+                                // Attempt select query execution
+                                $sql = "SELECT * FROM jobs";
+                                $result = mysqli_query($link, $sql);
 
-                // Attempt select query execution
-                $sql = "SELECT * FROM jobs";
-                if($result = mysqli_query($link, $sql)){
-                    if(mysqli_num_rows($result) > 0){
-                        echo "<table class='table table-bordered table-striped'>";
-                        echo "<thead>";
-                        echo "<tr>";
-                        echo "<th>Job Title</th>";
-                        echo "<th>Description</th>";
-                        echo "<th>Salary</th>";
-                        echo "</tr>";
-                        echo "</thead>";
-                        echo "<tbody>";
-                        while($row = mysqli_fetch_array($result)){
-                            echo "<td>" . $row['job_title'] . "</td>";
-                            echo "<td>" . $row['description'] . "</td>";
-                            echo "<td>" . $row['salary'] . "</td>";
-                            echo "<td>";
-                            echo "<a href='../public/pages/read.php?id=". $row['id'] ."' title='View Record' data-toggle='tooltip'><span class='glyphicon glyphicon-eye-open'></span></a>";
-                            echo "<a href='../public/pages/update.php?id=". $row['id'] ."' title='Update Record' data-toggle='tooltip'><span class='glyphicon glyphicon-pencil'></span></a>";
-                            echo "<a href='../public/pages/delete.php?id=". $row['id'] ."' title='Delete Record' data-toggle='tooltip'><span class='glyphicon glyphicon-trash'></span></a>";
-                            echo "</td>";
-                            echo "</tr>";
-                        }
-                        echo "</tbody>";
-                        echo "</table>";
-                        // Free result set
-                        mysqli_free_result($result);
-                    } else{
-                        echo "<p class='lead'><em>No records were found.</em></p>";
-                    }
-                } else{
-                    echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
-                }
+                                if(mysqli_num_rows($result) > 0){
 
-                // Close connection
-                mysqli_close($link);
-                ?>
-            </div>
+                                    while($row = mysqli_fetch_assoc($result)){
+                                        echo "<div class='jumbotron'>";
+                                        echo "<h2>" . $row['job_title'] . "</h2>";
+                                        echo "<p style='font-size: 17px' class='lead'>" . $row['description'] . "</p>";
+                                        echo "<a class='btn btn-lg btn-primary' href='../public/pages/read.php?id=". $row['id'] ."' title='View Record' data-toggle='tooltip'>Ver Oferta</a>";
+                                        echo "</div>";
+                                      /*  echo "<a href='../public/pages/update.php?id=". $row['id'] ."' title='Update Record' data-toggle='tooltip'><span class='glyphicon glyphicon-pencil'></span></a>";
+                                        echo "<a href='../public/pages/delete.php?id=". $row['id'] ."' title='Delete Record' data-toggle='tooltip'><span class='glyphicon glyphicon-trash'></span></a>";*/
+                                        echo "<hr>";
+                                    }
+                                } else{
+                                    echo "<p class='lead'><em>No records were found.</em></p>";
+                                }
+
+                                // Close connection
+                                mysqli_close($link);
+                                ?>
+
         </div>
-    </div>
-</div>
+    </main>
 </body>
 </html>
 <?php include 'templates/footer.php';
