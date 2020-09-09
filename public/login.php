@@ -17,7 +17,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     // Check if username is empty
     if(empty(trim($_POST["email"]))){
-        $username_err = "Please enter email.";
+        $email_err = "Please enter email.";
     } else{
         $email = trim($_POST["email"]);
     }
@@ -32,25 +32,24 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Validate credentials
     if(empty($email_err) && empty($password_err)){
         // Prepare a select statement
-        $sql = "SELECT id, email, password FROM users WHERE email = ?";
+        $sql = "SELECT id, email, password FROM users WHERE email = :email";
 
-        if($stmt = mysqli_prepare($link, $sql)){
+        if($stmt = $link->prepare($sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "s", $param_email);
+            $stmt->bindParam(":email", $param_email, PDO::PARAM_STR);
 
             // Set parameters
-            $param_email = $email;
+            $param_email = trim($_POST["email"]);
 
             // Attempt to execute the prepared statement
-            if(mysqli_stmt_execute($stmt)){
-                // Store result
-                mysqli_stmt_store_result($stmt);
-
+            if($stmt->execute()){
                 // Check if email exists, if yes then verify password
-                if(mysqli_stmt_num_rows($stmt) == 1){
+                if($stmt->rowCount() == 1){
                     // Bind result variables
-                    mysqli_stmt_bind_result($stmt, $id, $email, $hashed_password);
-                    if(mysqli_stmt_fetch($stmt)){
+                    if($row = $stmt->fetch()){
+                        $id = $row["id"];
+                        $email = $row["email"];
+                        $hashed_password = $row["password"];
                         if(password_verify($password, $hashed_password)){
                             // Password is correct, so start a new session
                             session_start();
@@ -58,7 +57,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             // Store data in session variables
                             $_SESSION["loggedin"] = true;
                             $_SESSION["id"] = $id;
-                            $_SESSION["username"] = $email;
+                            $_SESSION["email"] = $email;
 
                             // Redirect user to welcome page
                             header("location: ../index.php");
@@ -76,12 +75,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             }
 
             // Close statement
-            mysqli_stmt_close($stmt);
+            unset($stmt);
         }
     }
 
     // Close connection
-    mysqli_close($link);
+    unset($link);
 }
 ?>
 

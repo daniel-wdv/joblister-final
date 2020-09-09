@@ -20,9 +20,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b701db64-abe9-4ebe-924a-206932bdd842" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/my-account.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/list-jobs.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/list-jobs.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/login.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/pages/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/pages/create.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/pages/delete.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/pages/delete.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/pages/read.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/pages/read.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/pages/update.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/pages/update.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/register.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/reset-password.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/reset-password.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/templates/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/templates/header.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -44,7 +53,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../joblister" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -67,6 +76,9 @@
       <workItem from="1598254697750" duration="17435000" />
       <workItem from="1598601096994" duration="16516000" />
       <workItem from="1598889450866" duration="30536000" />
+      <workItem from="1599146891184" duration="17648000" />
+      <workItem from="1599230196448" duration="203000" />
+      <workItem from="1599574450549" duration="16659000" />
     </task>
     <servers />
   </component>
@@ -86,6 +98,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599647271369">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1599647271369" />
     <state x="-1332" y="200" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1598620288756">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
@@ -100,9 +116,14 @@
     </state>
     <state x="-1288" y="147" key="FileChooserDialogImpl/0.0.1280.680/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1599043931022" />
     <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1598959929381" />
-    <state x="-1252" y="237" width="583" height="566" key="find.popup" timestamp="1598621870041">
+    <state x="-1126" y="439" key="NewPhpFileDialog" timestamp="1599147245082">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
+    <state x="-1126" y="439" key="NewPhpFileDialog/0.0.1280.680/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1599147245082" />
+    <state x="445" y="114" width="557" height="566" key="find.popup" timestamp="1599578769031">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
     <state x="-1252" y="237" width="583" height="566" key="find.popup/0.0.1280.680/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1598621870041" />
+    <state x="445" y="114" width="557" height="566" key="find.popup/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1599578769031" />
   </component>
 </project>

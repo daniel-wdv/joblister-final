@@ -15,21 +15,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $email_err = "Please enter an email.";
     } else{
         // Prepare a select statement
-        $sql = "SELECT id FROM users WHERE email = ?";
+        $sql = "SELECT id FROM users WHERE email = :email";
 
-        if($stmt = mysqli_prepare($link, $sql)){
+        if($stmt = $link->prepare($sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "s", $param_email);
+            $stmt->bindParam(":email", $param_email, PDO::PARAM_STR);
 
             // Set parameters
             $param_email = trim($_POST["email"]);
 
             // Attempt to execute the prepared statement
-            if(mysqli_stmt_execute($stmt)){
-                /* store result */
-                mysqli_stmt_store_result($stmt);
-
-                if(mysqli_stmt_num_rows($stmt) == 1){
+            if($stmt->execute()){
+                if($stmt->rowCount() == 1){
                     $email_err = "This email is already taken.";
                 } else{
                     $email = trim($_POST["email"]);
@@ -39,7 +36,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             }
 
             // Close statement
-            mysqli_stmt_close($stmt);
+            unset($stmt);
         }
     }
 
@@ -66,31 +63,32 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if(empty($email_err) && empty($password_err) && empty($confirm_password_err)){
 
         // Prepare an insert statement
-        $sql = "INSERT INTO users (email, password) VALUES (?, ?)";
+        $sql = "INSERT INTO users (email, password) VALUES (:email, :password)";
 
-        if($stmt = mysqli_prepare($link, $sql)){
+        if($stmt = $link->prepare($sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "ss", $param_email, $param_password);
+            $stmt->bindParam(":email", $param_email, PDO::PARAM_STR);
+            $stmt->bindParam(":password", $param_password, PDO::PARAM_STR);
 
             // Set parameters
             $param_email = $email;
             $param_password = password_hash($password, PASSWORD_DEFAULT); // Creates a password hash
 
             // Attempt to execute the prepared statement
-            if(mysqli_stmt_execute($stmt)){
+            if($stmt->execute()){
                 // Redirect to main page
-                header("location: ../index.php");
+                exit();
             } else{
                 echo "Something went wrong. Please try again later.";
             }
 
             // Close statement
-            mysqli_stmt_close($stmt);
+            unset($stmt);
         }
     }
 
     // Close connection
-    mysqli_close($link);
+    unset($link);
 }
 ?>
 

@@ -5,22 +5,21 @@ if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
     require_once "../../config/config.php";
 
     // Prepare a select statement
-    $sql = "SELECT * FROM jobs WHERE id = ?";
+    $sql = "SELECT * FROM jobs WHERE id = :id";
 
-    if($stmt = mysqli_prepare($link, $sql)){
+    if($stmt = $link->prepare($sql)){
         // Bind variables to the prepared statement as parameters
-        mysqli_stmt_bind_param($stmt, "i", $param_id);
+        $stmt->bindParam(":id", $param_id);
 
         // Set parameters
         $param_id = trim($_GET["id"]);
 
         // Attempt to execute the prepared statement
-        if(mysqli_stmt_execute($stmt)){
-            $result = mysqli_stmt_get_result($stmt);
+        if($stmt->execute()){
 
-            if(mysqli_num_rows($result) == 1){
+            if($stmt->rowCount() == 1){
                 /* Fetch result row as an associative array. Since the result set contains only one row, we don't need to use while loop */
-                $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+                $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
                 // Retrieve individual field value
                 $job_title = $row["job_title"];
@@ -42,10 +41,10 @@ if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
     }
 
     // Close statement
-    mysqli_stmt_close($stmt);
+    unset($stmt);
 
     // Close connection
-    mysqli_close($link);
+    unset($link);
 } else{
     // URL doesn't contain id parameter. Redirect to error page
     header("location: error.php");
@@ -101,7 +100,11 @@ if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
                     <label>Contact Email</label>
                     <p class="form-control-static"><?php echo $row["contact_email"]; ?></p>
                 </div>
-                <p><a href="../pages/list-jobs.php" class="btn btn-primary">Back</a></p>
+                <div style="margin-bottom: 10vh;" class="">
+              <?php echo "<a href='../pages/update.php?id=". $row['id'] ."' class='btn btn-primary' title='Update Record' data-toggle='tooltip'>Update</a>" ?>
+              <?php echo "<a href='../pages/delete.php?id=". $row['id'] ."' class='btn btn-danger' title='Delete Record' data-toggle='tooltip'>Delete</a>" ?>
+                <a href="../pages/list-jobs.php" class="btn btn-default">Back</a>
+                </div>
             </div>
         </div>
     </div>

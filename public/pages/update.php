@@ -74,11 +74,17 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
     // Check input errors before inserting in database
     if(empty($job_title_err) && empty($company_err) && empty($description_err) && empty($salary_err) && empty($location_err) && empty($contact_user_err) && empty($contact_email_err)) {
         // Prepare an insert statement
-        $sql = "UPDATE jobs SET job_title=?, company=?, description=?, salary=?, location=?, contact_user=?, contact_email=? WHERE id=?";
+        $sql = "UPDATE jobs SET job_title=:job_title, company=:company, description=:description, salary=:salary, location=:location, contact_user=:contact_user, contact_email=:contact_email WHERE id=:id";
 
-        if($stmt = mysqli_prepare($link, $sql)){
-            // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "sssssssi", $param_job_title, $param_company, $param_description, $param_salary, $param_location, $param_contact_user, $param_contact_email, $param_id);
+        if($stmt = $link->prepare($sql)){
+            $stmt->bindParam(":job_title", $param_job_title);
+            $stmt->bindParam(":company", $param_company);
+            $stmt->bindParam(":description", $param_description);
+            $stmt->bindParam(":salary", $param_salary);
+            $stmt->bindParam(":location", $param_location);
+            $stmt->bindParam(":contact_user", $param_contact_user);
+            $stmt->bindParam(":contact_email", $param_contact_email);
+            $stmt->bindParam(":id", $param_id);
 
             // Set parameters
             $param_job_title = $job_title;
@@ -91,7 +97,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
             $param_id = $id;
 
             // Attempt to execute the prepared statement
-            if(mysqli_stmt_execute($stmt)){
+            if($stmt->execute()){
                 // Records created successfully. Redirect to landing page
                 header("location: ../list-jobs.php");
                 exit();
@@ -101,11 +107,11 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
         }
 
         // Close statement
-        mysqli_stmt_close($stmt);
+        unset($stmt);
     }
 
     // Close connection
-    mysqli_close($link);
+    myunset($link);
 } else{
     // Check existence of id parameter before processing further
     if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
@@ -113,21 +119,19 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
         $id =  trim($_GET["id"]);
 
         // Prepare a select statement
-        $sql = "SELECT * FROM jobs WHERE id = ?";
-        if($stmt = mysqli_prepare($link, $sql)){
+        $sql = "SELECT * FROM jobs WHERE id = :id";
+        if($stmt = $link->prepare($sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "i", $param_id);
+            $stmt->bindParam(":id", $param_id);
 
             // Set parameters
             $param_id = $id;
 
             // Attempt to execute the prepared statement
-            if(mysqli_stmt_execute($stmt)){
-                $result = mysqli_stmt_get_result($stmt);
-
-                if(mysqli_num_rows($result) == 1){
+            if($stmt->execute()){
+                if($stmt->rowCount() == 1){
                     /* Fetch result row as an associative array. Since the result set contains only one row, we don't need to use while loop */
-                    $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+                    $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
                     // Retrieve individual field value
                     $job_title = $row["job_title"];
@@ -149,10 +153,10 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
         }
 
         // Close statement
-        mysqli_stmt_close($stmt);
+        unset($stmt);
 
         // Close connection
-        mysqli_close($link);
+        unset($link);
     }  else{
         // URL doesn't contain id parameter. Redirect to error page
         header("location: error.php");

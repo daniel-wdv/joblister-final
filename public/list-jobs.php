@@ -7,11 +7,10 @@
 
                                 // Attempt select query execution
                                 $sql = "SELECT * FROM jobs";
-                                $result = mysqli_query($link, $sql);
+                                if($result = $link->query($sql)){
+                                if($result->rowCount() > 0){
 
-                                if(mysqli_num_rows($result) > 0){
-
-                                    while($row = mysqli_fetch_assoc($result)){
+                                    while($row = $result->fetch()){
                                         echo "<div class='jumbotron'>";
                                         echo "<h2>" . $row['job_title'] . "</h2>";
                                         echo "<p style='font-size: 17px' class='lead'>" . $row['description'] . "</p>";
@@ -21,15 +20,14 @@
                                         echo "<a href='../public/pages/delete.php?id=". $row['id'] ."' title='Delete Record' data-toggle='tooltip'><span class='glyphicon glyphicon-trash'></span></a>";*/
                                         echo "<hr>";
                                     }
-                                } else{
+                                } else {
                                     echo "<p class='lead'><em>No records were found.</em></p>";
-                                }
+                                }}
 
                                 // Close connection
-                                mysqli_close($link);
+                                unset($link);;
                                 ?>
 
-        </div>
     </main>
 </body>
 </html>

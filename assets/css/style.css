@@ -1426,3 +1426,21 @@ button:hover {
 
   /*======== REGISTER PAGE CSS ========*/
 
+  /*======== MY ACCOUNT PAGE CSS ========*/
+  .my-account{
+    display: flex;
+  }
+
+  .jumbotron-row {
+    height: 100%;
+  }
+
+  .full-row {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .top-main {
+    padding-top: 15vh;
+  }
+
