@@ -1,7 +1,6 @@
 <?php
 // Include config file
-require_once "../config/config.php";
-include 'templates/header.php';
+require_once "../../config/config.php";
 
 // Define variables and initialize with empty values
 $email = $password = $confirm_password = "";
@@ -77,6 +76,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             // Attempt to execute the prepared statement
             if($stmt->execute()){
                 // Redirect to main page
+                header('Location: ../../index.php');
                 exit();
             } else{
                 echo "Something went wrong. Please try again later.";
@@ -91,46 +91,3 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     unset($link);
 }
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Registo</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
-    <style type="text/css">
-        body{ font: 14px sans-serif; }
-        .wrapper{ width: 350px; padding: 20px; }
-    </style>
-</head>
-<body>
-<div class="wrapper container-fluid">
-    <h2 style="text-align: center">Registar</h2>
-    <p>Por favor preencha os campos para efetuar o registo.</p>
-    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-        <div class="form-group <?php echo (!empty($email_err)) ? 'has-error' : ''; ?>">
-            <label>Email</label>
-            <input placeholder="Introduza o seu email..." type="text" name="email" class="form-control" value="<?php echo $email; ?>">
-            <span class="help-block"><?php echo $email_err; ?></span>
-        </div>
-        <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
-            <label>Password</label>
-            <input placeholder="Introduza a sua password..." type="password" name="password" class="form-control" value="<?php echo $password; ?>">
-            <span class="help-block"><?php echo $password_err; ?></span>
-        </div>
-        <div class="form-group <?php echo (!empty($confirm_password_err)) ? 'has-error' : ''; ?>">
-            <label>Repetir Password</label>
-            <input placeholder="Repita a password" type="password" name="confirm_password" class="form-control" value="<?php echo $confirm_password; ?>">
-            <span class="help-block"><?php echo $confirm_password_err; ?></span>
-        </div>
-        <div class="form-group">
-            <input type="submit" class="btn btn-primary" value="Registar">
-            <input type="reset" class="btn btn-default" value="Reset">
-        </div>
-        <p>Ja tem uma conta? <a href="login.php">Login aqui</a>.</p>
-    </form>
-</div>
-</body>
-</html>
-
-<?php include 'templates/footer.php'; ?>

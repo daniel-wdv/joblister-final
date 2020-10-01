@@ -1,12 +1,13 @@
 <?php
+
 // Check if the user is already logged in, if yes then redirect him to welcome page
-if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-    header("location: ../index.php");
+if(isset($_SESSION["user_id"]) && $_SESSION["user_id"] === true){
+    header("location: ../../index.php");
     exit;
 }
 
 // Include config file
-require_once "../config/config.php";
+require_once "../../config/config.php";
 
 // Define variables and initialize with empty values
 $email = $password = "";
@@ -52,15 +53,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                         $hashed_password = $row["password"];
                         if(password_verify($password, $hashed_password)){
                             // Password is correct, so start a new session
-                            session_start();
-
+                                session_start();
                             // Store data in session variables
-                            $_SESSION["loggedin"] = true;
-                            $_SESSION["id"] = $id;
+                            $_SESSION["user_id"] = $id;
                             $_SESSION["email"] = $email;
 
                             // Redirect user to welcome page
-                            header("location: ../index.php");
+                            header("location: ../../index.php");
                         } else{
                             // Display an error message if password is not valid
                             $password_err = "The password you entered was not valid.";
@@ -84,42 +83,3 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 }
 ?>
 
-<?php include 'templates/header.php'; ?>
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Login</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
-    <style type="text/css">
-        body{ font: 14px sans-serif; }
-        .wrapper{ width: 350px; padding: 20px; }
-    </style>
-</head>
-<body>
-<div class="wrapper container-fluid">
-    <h2 style="text-align: center;">Login</h2>
-    <p>Por favor preencha os campos para efetuar o login.</p>
-    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-        <div class="form-group <?php echo (!empty($email_err)) ? 'has-error' : ''; ?>">
-            <label>Email</label>
-            <input placeholder="Introduza o seu email" type="text" name="email" class="form-control" value="<?php echo $email; ?>">
-            <span class="help-block"><?php echo $email_err; ?></span>
-        </div>
-        <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
-            <label>Password</label>
-            <input placeholder="Introduza a sua password" type="password" name="password" class="form-control">
-            <span class="help-block"><?php echo $password_err; ?></span>
-        </div>
-        <div class="form-group">
-            <input type="submit" class="btn btn-primary" value="Login">
-        </div>
-        <p>Ainda nao tem uma conta? <a href="register.php">Registar aqui</a>.</p>
-    </form>
-</div>
-</body>
-</html>
-
-<?php include 'templates/footer.php'; ?>

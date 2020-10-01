@@ -1,4 +1,4 @@
-<!--====== FOOTER PART START ======-->
+<!--====== FOOTER SECTION START ======-->
 
 <footer id="footer" class="footer-area pt-120">
     <div class="container">
@@ -17,14 +17,14 @@
                         </form>
                     </div>
                 </div>
-            </div> <!-- row -->
-        </div> <!-- subscribe area -->
+            </div>
+        </div>
         <div class="footer-widget pb-100">
             <div class="row">
                 <div class="col-lg-4 col-md-6 col-sm-8">
                     <div class="footer-about mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
                         <a class="logo" href="#">
-                            <img src="assets/images/logo.svg" alt="logo">
+                            <img src="../assets/images/logo.svg" alt="logo">
                         </a>
                         <p class="text">A BasicJobs é uma plataforma de emprego, que cria uma ligação entre as empresas e os seus futuros colaboradores.</p>
                         <ul class="social">
@@ -33,7 +33,7 @@
                             <li><a href="#"><i class="lni lni-instagram-filled"></i></a></li>
                             <li><a href="#"><i class="lni lni-linkedin-original"></i></a></li>
                         </ul>
-                    </div> <!-- footer about -->
+                    </div>
                 </div>
                 <div class="col-lg-5 col-md-7 col-sm-7">
                     <div class="footer-link d-flex mt-50 justify-content-md-between">
@@ -46,7 +46,7 @@
                                 <li><a href="#">Registar</a></li>
                                 <li><a href="#">Política De Privacidade</a></li>
                             </ul>
-                        </div> <!-- footer wrapper -->
+                        </div>
                         <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
                             <div class="footer-title">
                                 <h4 class="title">TESTE</h4>
@@ -57,8 +57,8 @@
                                 <li><a href="#">TESTE</a></li>
                                 <li><a href="#">TESTE</a></li>
                             </ul>
-                        </div> <!-- footer wrapper -->
-                    </div> <!-- footer link -->
+                        </div>
+                    </div>
                 </div>
                 <div class="col-lg-3 col-md-5 col-sm-5">
                     <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
@@ -71,50 +71,39 @@
                             <li>https://github.com/daniel-wdv</li>
                             <li>Rua teste dos testes , Porto <br> 4430-750.</li>
                         </ul>
-                    </div> <!-- footer contact -->
+                    </div>
                 </div>
-            </div> <!-- row -->
-        </div> <!-- footer widget -->
+            </div>
+        </div>
         <div class="footer-copyright">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="copyright d-sm-flex justify-content-between">
                         <div class="copyright-content">
                             <p class="text">Developed by <a href="https://www.linkedin.com/in/daniel-carvalho-wd/" rel="nofollow">Daniel Carvalho</a></p>
-                        </div> <!-- copyright content -->
-                    </div> <!-- copyright -->
+                        </div>
+                    </div>
                 </div>
-            </div> <!-- row -->
-        </div> <!-- footer copyright -->
-    </div> <!-- container -->
+            </div>
+        </div>
+    </div>
     <div id="particles-2"></div>
 </footer>
 
-<!--====== FOOTER PART ENDS ======-->
+<!--====== FOOTER SECTION ENDS ======-->
 
-<!--====== BACK TOP TOP PART START ======-->
+<!--====== BACK TO TOP START ======-->
 
 <a href="#" class="back-to-top"><i class="lni lni-chevron-up"></i></a>
 
-<!--====== BACK TOP TOP PART ENDS ======-->
+<!--====== BACK TO TOP ENDS ======-->
 
-<!--====== PART START ======-->
-
-<!--
-    <section class="">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-"></div>
-            </div>
-        </div>
-    </section>
--->
-
-<!--====== PART ENDS ======-->
-
+<!--====== LOADING SCRIPTS ======-->
+<!--====== JQUERY AJAX ======-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js"></script>
 
+<!--====== Bootstrap js ======-->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js"></script>
 
 <!--====== Jquery js ======-->
 <script src="../assets/js/vendor/jquery-3.5.1-min.js"></script>
@@ -131,8 +120,6 @@
 <script src="../assets/js/waypoints.min.js"></script>
 <script src="../assets/js/jquery.counterup.min.js"></script>
 
-
-
 <!--====== Scrolling Nav js ======-->
 <script src="../assets/js/jquery.easing.min.js"></script>
 <script src="../assets/js/scrolling-nav.js"></script>
@@ -143,8 +130,5 @@
 <!--====== Particles js ======-->
 <script src="../assets/js/particles.min.js"></script>
 
-
-
 </body>
-
 </html>

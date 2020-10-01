@@ -1,23 +1,24 @@
 <?php
-
 // Include config file
 require_once "../../config/config.php";
 
+if(!isset($_SESSION['user_id'])){
+    header("Location:../views/login.view.php");
+}
+
 // Define variables and initialize with empty values
-$job_title = $company = $description = $salary = $location = $contact_user = $contact_email =  "";
+$job_title = $company = $description = $salary = $location = $contact_user = $contact_email =  $file_name = "";
 $job_title_err = $company_err = $description_err = $salary_err = $location_err = $contact_user_err = $contact_email_err = "";
 
-// Processing form data when form is submitted
-if(isset($_POST["id"]) && !empty($_POST["id"])){
-    // Get hidden input value
-    $id = $_POST["id"];
 
-    // Validate name
+// Processing form data when form is submitted
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+    // Validate job title
     $input_name = trim($_POST["job_title"]);
     if(empty($input_name)){
-        $job_title_err = "Please enter a Job title.";
+        $job_title_err = "Please enter a Job Title.";
     } elseif(!filter_var($input_name, FILTER_VALIDATE_REGEXP, array("options"=>array("regexp"=>"/^[a-zA-Z\s]+$/")))){
-        $job_title_err = "Please enter a valid Job title.";
+        $job_title_err = "Please enter a valid Job Title name.";
     } else{
         $job_title = $input_name;
     }
@@ -72,12 +73,15 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
         $contact_email = $input_contact_email;
     }
 
+
     // Check input errors before inserting in database
     if(empty($job_title_err) && empty($company_err) && empty($description_err) && empty($salary_err) && empty($location_err) && empty($contact_user_err) && empty($contact_email_err)) {
+
         // Prepare an insert statement
-        $sql = "UPDATE jobs SET job_title=:job_title, company=:company, description=:description, salary=:salary, location=:location, contact_user=:contact_user, contact_email=:contact_email WHERE id=:id";
+        $sql = "INSERT INTO jobs (job_title, user_id, company, description, salary, location, contact_user, contact_email) VALUES (:job_title, {$_SESSION['user_id']}, :company, :description, :salary, :location, :contact_user, :contact_email)";
 
         if($stmt = $link->prepare($sql)){
+            // Bind variables to the prepared statement as parameters
             $stmt->bindParam(":job_title", $param_job_title);
             $stmt->bindParam(":company", $param_company);
             $stmt->bindParam(":description", $param_description);
@@ -85,7 +89,6 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
             $stmt->bindParam(":location", $param_location);
             $stmt->bindParam(":contact_user", $param_contact_user);
             $stmt->bindParam(":contact_email", $param_contact_email);
-            $stmt->bindParam(":id", $param_id);
 
             // Set parameters
             $param_job_title = $job_title;
@@ -95,7 +98,6 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
             $param_location = $location;
             $param_contact_user = $contact_user;
             $param_contact_email = $contact_email;
-            $param_id = $id;
 
             // Attempt to execute the prepared statement
             if($stmt->execute()){
@@ -112,56 +114,8 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
     }
 
     // Close connection
-    myunset($link);
-} else{
-    // Check existence of id parameter before processing further
-    if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
-        // Get URL parameter
-        $id =  trim($_GET["id"]);
-
-        // Prepare a select statement
-        $sql = "SELECT * FROM jobs WHERE id = :id";
-        if($stmt = $link->prepare($sql)){
-            // Bind variables to the prepared statement as parameters
-            $stmt->bindParam(":id", $param_id);
-
-            // Set parameters
-            $param_id = $id;
-
-            // Attempt to execute the prepared statement
-            if($stmt->execute()){
-                if($stmt->rowCount() == 1){
-                    /* Fetch result row as an associative array. Since the result set contains only one row, we don't need to use while loop */
-                    $row = $stmt->fetch(PDO::FETCH_ASSOC);
-
-                    // Retrieve individual field value
-                    $job_title = $row["job_title"];
-                    $company = $row["company"];
-                    $description = $row["description"];
-                    $salary = $row["salary"];
-                    $location = $row["location"];
-                    $contact_user = $row["contact_user"];
-                    $contact_email = $row["contact_email"];
-                } else{
-                    // URL doesn't contain valid id. Redirect to error page
-                    header("location: error.php");
-                    exit();
-                }
-
-            } else{
-                echo "Oops! Something went wrong. Please try again later.";
-            }
-        }
-
-        // Close statement
-        unset($stmt);
-
-        // Close connection
-        unset($link);
-    }  else{
-        // URL doesn't contain id parameter. Redirect to error page
-        header("location: error.php");
-        exit();
-    }
+    unset($link);
 }
+
+
 ?>
