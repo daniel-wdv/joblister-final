@@ -1407,21 +1407,103 @@ button:hover {
   /*======== REGISTER PAGE CSS ========*/
 
   /*======== MY ACCOUNT PAGE CSS ========*/
-  .my-account{
+  .main-box {
     display: flex;
-  }
-
-  .jumbotron-row {
-    height: 100%;
-  }
-
-  .full-row {
-    width: 100%;
     justify-content: center;
   }
 
-  .top-main {
-    padding-top: 15vh;
+  .outer-box {
+    display: flex;
+  }
+
+  .left-menu {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .left-input {
+    box-shadow: 0px 0px 18px 0px rgb(99 104 130 / 57%);
+    background: #373B44;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #4286f4, #373B44);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #4286f4, #373B44); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    padding: 10px 10px 10px 10px;
+    border-radius: 10px;
+    text-align: center;
+  }
+
+  .left-input:hover {
+  background: linear-gradient(to right, #2c60b3, #505050);
+  }
+
+  .left-input-margin {
+    margin-bottom: 2vh;
+    margin-right: 10vw;
+  }
+
+  .left-input-size {
+    width: 75%;
+  }
+
+  .p-size {
+    margin: 0px;
+    color: white;
+    font-family: "Roboto" ;
+    font-weight: bold;
+    font-size: 1.7rem;
+  }
+
+  .right-box {
+    box-shadow: 0px 0px 18px 0px rgb(99 104 130 / 57%);
+    padding: 15px 15px 15px 15px;
+    width: 35vw;
+    height: 55vh;
+    border-radius: 15px;
+  }
+
+  .dashboard-title {
+    display: flex;
+    justify-content: center;
+  }
+
+  .input-dashboard {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 10vh;
+  }
+
+  .left-input-box {
+    box-shadow: 0px 0px 18px 0px rgb(99 104 130 / 57%);
+    padding: 10px 10px 10px 10px;
+    border-radius: 10px;
+  }
+
+  .right-input-box {
+    box-shadow: 0px 0px 18px 0px rgb(99 104 130 / 57%);
+    padding: 10px 10px 10px 10px;
+    border-radius: 10px;
+  }
+
+  .svg-size-2 {
+    width: 1.3vw;
+  }
+
+  .title-svg {
+    margin-top: 1vh;
+    margin-right: 0.5vw;
+  }
+
+  .svg-tabs {
+    margin-right: 0.5vw;
+    margin-bottom: 0.2vw;
+    color: snow;
+  }
+
+  .account-info {
+    border-bottom: 1px solid;
+  }
+
+  .input-size {
+
   }
 
 /*======== CHANGE PASSWORD PAGE ========*/
@@ -1471,7 +1553,7 @@ button:hover {
     width: 22vw;
   }
 
-  .svg-size-2 {
+  .svg-size {
     width: 22vw;
     height: 30vh;
     margin-top: 15vh;
