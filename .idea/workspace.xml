@@ -20,9 +20,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b701db64-abe9-4ebe-924a-206932bdd842" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/models/company-create.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/models/company.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/views/company-create.view.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/views/company.view.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/templates/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/templates/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/models/create.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/list-jobs.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/models/list-jobs.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/views/create.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/create.view.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/views/my-account.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/my-account.view.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,6 +42,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="2" />
+  </component>
   <component name="ProjectId" id="1gMEFXzNrmh9Awyl5eOgUtoeZKD" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -44,7 +53,8 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../devsite" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -75,7 +85,9 @@
       <workItem from="1600952580670" duration="48000" />
       <workItem from="1600952651832" duration="64000" />
       <workItem from="1601367846768" duration="40601000" />
-      <workItem from="1601562157484" duration="15863000" />
+      <workItem from="1601562157484" duration="15864000" />
+      <workItem from="1601969433366" duration="14345000" />
+      <workItem from="1602156047794" duration="7969000" />
     </task>
     <servers />
   </component>
@@ -108,9 +120,10 @@
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
     <state x="-1230" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1599122905475" />
-    <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1601378566930">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state x="-1499" y="98" key="FileChooserDialogImpl" timestamp="1602156055698">
+      <screen x="-1920" y="0" width="1280" height="693" />
     </state>
+    <state x="-1499" y="98" key="FileChooserDialogImpl/-1920.0.1280.693/0.0.1920.1040@-1920.0.1280.693" timestamp="1602156055698" />
     <state x="-1288" y="147" key="FileChooserDialogImpl/0.0.1280.680/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1599043931022" />
     <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1598959929381" />
     <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1601378566930" />
@@ -119,6 +132,10 @@
     </state>
     <state x="-1391" y="293" key="NewPhpFileDialog/-1920.0.1280.693/0.0.1920.1040@-1920.0.1280.693" timestamp="1601464780722" />
     <state x="-1126" y="439" key="NewPhpFileDialog/0.0.1280.680/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1599147245082" />
+    <state x="648" y="170" key="SettingsEditor" timestamp="1602001302619">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="648" y="170" key="SettingsEditor/-1920.0.1280.693/0.0.1920.1040@-1920.0.1280.693" timestamp="1602001302619" />
     <state width="498" height="446" key="SwitcherDM" timestamp="1601627771857">
       <screen x="-1920" y="0" width="1280" height="693" />
     </state>
@@ -127,9 +144,10 @@
       <screen x="-1920" y="0" width="1280" height="693" />
     </state>
     <state x="-1254" y="131" width="923" height="663" key="dock-window-1/-1920.0.1280.693/0.0.1920.1040@-1920.0.1280.693" timestamp="1601480930760" />
-    <state x="366" y="67" width="557" height="566" key="find.popup" timestamp="1601385151627">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state x="-1554" y="68" width="557" height="577" key="find.popup" timestamp="1602001085103">
+      <screen x="-1920" y="0" width="1280" height="693" />
     </state>
+    <state x="-1554" y="68" width="557" height="577" key="find.popup/-1920.0.1280.693/0.0.1920.1040@-1920.0.1280.693" timestamp="1602001085103" />
     <state x="-1252" y="237" width="583" height="566" key="find.popup/0.0.1280.680/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1598621870041" />
     <state x="445" y="114" width="557" height="566" key="find.popup/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1599578769031" />
     <state x="366" y="67" width="557" height="566" key="find.popup/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1601385151627" />

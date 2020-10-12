@@ -1485,6 +1485,7 @@ button:hover {
 
   .svg-size-2 {
     width: 1.3vw;
+    padding: 0px 0px 5px 0px;
   }
 
   .title-svg {
@@ -1518,7 +1519,40 @@ button:hover {
 
 /*======== LIST JOBS PAGE ========*/
   .jobs-box {
-    box-shadow: 0px 0px 18px 0px rgb(50 77 215 / 78%) ;
+    box-shadow: 0px 0px 18px 0px rgb(99 104 130 / 76%) ;
+  }
+
+  .list-jobs-date {
+    float: right;
+  }
+
+  .button-style {
+    background-color: black ;
+    color: white;
+  }
+
+  .jobs-box {
+    max-width: 80%;
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    flex-direction: column;
+
+  }
+
+  .order-by-div {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 7vh;
+  }
+
+  .order-by-select {
+    padding: 10px 10px 10px 10px;
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+    font-family: "Roboto";
   }
 
 /*======== LOGIN PAGE ========*/
@@ -1551,10 +1585,6 @@ button:hover {
 
   .svg-size {
     width: 22vw;
-  }
-
-  .svg-size {
-    width: 22vw;
     height: 30vh;
     margin-top: 15vh;
   }
@@ -1566,4 +1596,39 @@ button:hover {
     margin-left: 4vw;
     display: flex;
   }
+
+/*========COMPANY PAGE ========*/
+
+.create-company-btn {
+  display: flex;
+}
+
+.text-underline {
+  text-decoration: none !important;
+  color: black;
+  font-weight: 600;
+}
+
+.text-underline:hover {
+  color: #3535ffcc;
+}
+
+.create-company {
+  display: flex;
+  flex-direction: column;
+  max-width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+}
+
+.company-box {
+  padding: 3rem;
+  box-shadow: 0px 0px 18px 0px rgb(99 104 130 / 57%);
+  border-radius: 3rem;
+}
+
+.upload-margin {
+  margin-bottom: 3rem;
+}
 
