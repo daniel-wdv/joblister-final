@@ -1,10 +1,9 @@
 <?php require_once '../pages/read.php'; ?>
 <?php include '../templates/header.php'; ?>
 
-    <div class="wrapper">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12">
+
+        <div class="create-company">
+             <div class="company-box">
                     <div class="page-header">
                         <h1>View Record</h1>
                     </div>
@@ -43,9 +42,7 @@
                         <?php endif; ?>
                         <a href="../models/list-jobs.php" class="btn btn-default">Back</a>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
+       </div>
+             </div>
 
 <?php include '../templates/footer.php'; ?>

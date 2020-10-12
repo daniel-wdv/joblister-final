@@ -20,16 +20,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b701db64-abe9-4ebe-924a-206932bdd842" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/models/company-create.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/models/company.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/views/company-create.view.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/views/company.view.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/views/company-update.view.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/company.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/pages/company-update.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/models/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/models/create.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/models/list-jobs.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/models/list-jobs.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/views/create.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/create.view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/views/my-account.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/my-account.view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/views/company.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/company.view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/views/read.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/read.view.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +85,7 @@
       <workItem from="1601367846768" duration="40601000" />
       <workItem from="1601562157484" duration="15864000" />
       <workItem from="1601969433366" duration="14345000" />
-      <workItem from="1602156047794" duration="7969000" />
+      <workItem from="1602156047794" duration="19950000" />
     </task>
     <servers />
   </component>

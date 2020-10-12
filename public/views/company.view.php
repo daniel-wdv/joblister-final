@@ -1,4 +1,5 @@
 <?php include '../templates/header.php'; ?>
+<?php include '../models/company-create.php'; ?>
 
     <div class="main-box">
         <div class="outer-box">
@@ -29,14 +30,26 @@
                 </div>
 
                 <div class="create-company-btn">
-                    <div class="left-input-box">
+                    <div class="create-company-plus">
                         <a class="text-underline" href="company-create.view.php" type="button">Create Company
                         <svg class="svg-size-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z" clip-rule="evenodd"></path></svg></a>
                     </div>
                 </div>
+                <?php $sql = "SELECT * FROM my_company WHERE user_id = {$_SESSION['user_id']}";
+                    if($result = $link->query($sql)){
+                         if($result->rowCount() > 0){ ?>
+                           <?php while($row = $result->fetch()){ ?>
+                                 <div class="companies-btn">
+                                      <div class="companies-list">
+                                          <a class='text-underline' href='company-update.view.php?id=<?php echo $row['id'] ?>' type='button'><?php echo "<svg class='svg-size-2' fill='currentColor' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' d='M4 4a2 2 0 012-2h8a2 2 0 012 2v12a1 1 0 110 2h-3a1 1 0 01-1-1v-2a1 1 0 00-1-1H9a1 1 0 00-1 1v2a1 1 0 01-1 1H4a1 1 0 110-2V4zm3 1h2v2H7V5zm2 4H7v2h2V9zm2-4h2v2h-2V5zm2 4h-2v2h2V9z' clip-rule='evenodd'></path></svg>" . $row['company'];?></a>
+                                      </div>
+                                 </div>
+                           <?php }} else {
+                                         echo "<p class='lead'><em>No records were found.</em></p>";
+                    }}  ?>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
 
 
 <?php include '../templates/footer.php';

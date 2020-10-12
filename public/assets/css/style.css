@@ -1632,3 +1632,23 @@ button:hover {
   margin-bottom: 3rem;
 }
 
+.companies-btn {
+  display: inline-flex;
+  margin-top: 3rem;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: space-between;
+}
+
+.companies-list {
+  display: inline-flex;
+  box-shadow: 0px 0px 18px 0px rgb(99 104 130 / 57%);
+  padding: 1rem;
+}
+
+.create-company-plus {
+  border-bottom: 1px solid;
+  padding: 1rem;
+}
+
+

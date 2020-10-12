@@ -1,5 +1,6 @@
 <?php include '../templates/header.php'; ?>
 
+
     <main role="main" class="container">
         <div class="order-by-div">
             <select class="order-by-select" id="orderby" name="orderby">
@@ -13,6 +14,7 @@
                                 <?php
                                 // Include config file
                                 require_once "../../config/config.php";
+
 
                                 // Attempt select query execution
                                 $sql = "SELECT * FROM jobs ORDER BY post_date DESC ";

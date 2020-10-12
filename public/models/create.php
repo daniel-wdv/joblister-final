@@ -7,7 +7,7 @@ if(!isset($_SESSION['user_id'])){
 }
 
 // Define variables and initialize with empty values
-$job_title = $company = $description = $salary = $location = $contact_user = $contact_email =  $file_name = "";
+$job_title = $company = $description = $salary = $location = $contact_user = $contact_email = "";
 $job_title_err = $company_err = $description_err = $salary_err = $location_err = $contact_user_err = $contact_email_err = "";
 
 
